@@ -8,6 +8,10 @@ package model;
  *
  * @author pasin
  */
-public class Receptionist {
+public class Receptionist extends User{
+    
+    public Receptionist(String userId, String username, String passwordHash, String createdAt) {
+        super(userId, username, passwordHash, "Receptionist", createdAt);
+    }
     
 }
