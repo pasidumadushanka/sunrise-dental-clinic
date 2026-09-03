@@ -14,15 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-/**
- * LoginForm
- *
- * The main application entry point — a username/password form that
- * hands off to AuthController for actual authentication and view
- * routing. Implemented as a classic Singleton so AuthController's
- * login/logout methods can easily display/dismiss it without instantiating
- * a new copy each time.
- */
+    
 public class LoginForm extends JFrame {
 
     private static final Color ACCENT_BLUE = new Color(46, 117, 182);
@@ -133,8 +125,15 @@ public class LoginForm extends JFrame {
         loginButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         loginButton.setMaximumSize(new Dimension(280, 36));
         loginButton.setFont(new Font("SansSerif", Font.BOLD, 13));
-        loginButton.setBackground(ACCENT_BLUE);
-        loginButton.setForeground(Color.WHITE);
+        
+        // --- Color Fix Changes ---
+        loginButton.setOpaque(true);                       
+        loginButton.setContentAreaFilled(true);            
+        loginButton.setBorderPainted(false);               
+        loginButton.setBackground(new Color(25, 118, 210)); 
+        loginButton.setForeground(Color.WHITE);              
+        // -------------------------
+
         loginButton.setFocusPainted(false);
         loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         loginButton.addActionListener(new ActionListener() {
